@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>Books info by ISBN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main id="page-container" class="page-container">
+      <h2>Google book info and Openlibrary image lookup by ISBN</h2>
+      <div class="default-data">
+        <h4 class="default-data-title">Set defaults if you want</h4>
+        <div class="default-entry-container">
+          <label for="default-category-in-list">Default category for all:</label>
+          <select id="default-category-in-list">
+            <option value="">-</option>
+            <option value="Philosophy">Philosophy</option>
+            <option value="Psychology">Psychology</option>
+            <option value="Society">Society</option>
+            <option value="Fiction">Art</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Various">Various</option>
+          </select>
+          <input type="text" placeholder="Custom default category" id="custom-default-category"></input>
+        </div>
+        <div class="default-entry-container">
+          <label for="default-condition">Default condition for all:</label>
+          <select id="default-condition">
+            <option value="New">New</option>
+            <option value="Used, Very Good">Used, Very Good</option>
+            <option value="Used, Good">Used, Good</option>
+          </select>
+        </div>
+        <div class="default-entry-container">
+          <label for="default-source-in-list">Default source for all:</label>
+          <select id="default-source-in-list">
+            <option value="">-</option>
+            <option value="Verso">Verso</option>
+            <option value="Mano">Mano</option>
+            <option value="Dominykas">Dominykas</option>
+          </select>
+          <input type="text" placeholder="Custom default source" id="custom-default-source"></input>
+        </div>
+      </div>
+      <hr>
+      <form id="form" class="form" action="">
+        <textarea id="isbn-input" rows="4" cols="60" placeholder="Enter your ISBNs. Also accepts lists with commas"></textarea>
+        <span class="form-info">E.g. "9780553804577", or "9780553804577, 9780571144563" <br> Book with no cover example: "9781784781798"</span>
+        <br>
+        <div class="buttons-container">
+          <button class="btn lookup-btn" type="submit">Look up</button>
+          <button id="export-btn" class="btn export-btn" type="button">Export them beauties to csv</button>
+          <button class="btn reset-btn" type="reset" id="reset-btn">Reset</button>
+        </div>
+      </form>
+      <div id="content" class="content"></div>
+    </main>
+    <script>
+      function process(e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if (code == 13) { //Enter keycode
+          onFormSubmit
+        }
+      }
+    </script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
