@@ -12,9 +12,8 @@ export function createBookHtml(isbn, item, itemHasMissingData, image) {
     + `<p class="error-${!item.volumeInfo?.pageCount}"><b>Pages: </b>` + item.volumeInfo?.pageCount + '</p>'
     + '</div>'
     + '<div class="book-img-container">'
-    + '<p><b>Openlibrary image: </b>' + '</p><br>'
-    + '<p>'
-    + `${image.errorMsg ? '<p class="error-true">' + image.errorMsg + '</p>' : image.src}`
+    + '<p><b>Image: </b>' + '</p><br>'
+    + '<p class="image-link">' + image.src
     + '</p><br>'
     + `<img class="book-img" src=${image.src}></img>`
     + "</div></div>"

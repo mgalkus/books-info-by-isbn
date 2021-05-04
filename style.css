@@ -138,3 +138,9 @@ button:focus {
   width: 370px;
   height: auto;
 }
+
+.image-link {
+  display: block;
+  max-width: 350px;
+  word-wrap:break-word;
+}
